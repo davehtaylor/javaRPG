@@ -7,6 +7,8 @@ public class Player
     private String name;
     private int currentHP; 
     private int maxHP; 
+    private int currentXP;
+    private int currentLevel;
 
     private ArrayList<String> inventory = new ArrayList<String>();
 
@@ -15,6 +17,8 @@ public class Player
         this.name = name;
         currentHP = maxHP = 100;
         inventory.add("fists");
+        currentXP = 0;
+        currentLevel = 1;
     }
 
     public String getName()
@@ -30,6 +34,16 @@ public class Player
     public int getMaxHP()
     {
         return maxHP;
+    }
+
+    public int getCurrentXP()
+    {
+        return currentXP;
+    }
+
+    public int getCurrentLevel()
+    {
+        return currentLevel;
     }
 
     public void listItems()
@@ -49,18 +63,28 @@ public class Player
     {
         item = item.toLowerCase(); 
 
+        // Make sure the user actually entered something
         if (item.isEmpty())
         {
             System.out.println("Choose an item to drop");
         }
+        // Can't drop your fists
         else if (item.equals("fist") || item.equals("fists"))
         {
-            System.out.println("Your fists are attached to you");
+            System.out.println("** Your fists are attached to you **");
         }
+        // Make sure the item is actually in the inventory
         else
         {
-            inventory.remove(item);
-            System.out.println("Dropped " + item);
+            if (inventory.contains(item))
+            {
+                inventory.remove(item);
+                System.out.println("Dropped " + item);
+            }
+            else 
+            {
+                System.out.println("** " + item + " not in inventory **");
+            }
         }
     }
 }
