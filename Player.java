@@ -2,21 +2,22 @@
 
 import java.util.ArrayList;
 
+// hi Dave!
 public class Player
 {
     private String name;
-    private int currentHP; 
-    private int maxHP; 
+    private int currentHP;
+    private int maxHP;
     private int currentXP;
     private int currentLevel;
 
-    private ArrayList<String> inventory = new ArrayList<String>();
+    private ArrayList<Item> inventory = new ArrayList<Item>();
 
     public Player(String name)
     {
         this.name = name;
         currentHP = maxHP = 100;
-        inventory.add("fists");
+        //inventory.add("fists");
         currentXP = 0;
         currentLevel = 1;
     }
@@ -25,7 +26,7 @@ public class Player
     {
         return name;
     }
-    
+
     public int getCurrentHP()
     {
         return currentHP;
@@ -48,20 +49,20 @@ public class Player
 
     public void listItems()
     {
-        for (String item : inventory)
-            System.out.println("- " + item);
+        for (Item item : inventory)
+            System.out.println("- " + item.getItemName());
     }
 
-    public void addItem(String item)
+    public void addItem(Item item)
     {
-        item = item.toLowerCase();
+        //item = item.toLowerCase();
 
         inventory.add(item);
     }
 
     public void dropItem(String item)
     {
-        item = item.toLowerCase(); 
+        item = item.toLowerCase();
 
         // Make sure the user actually entered something
         if (item.isEmpty())
@@ -81,7 +82,7 @@ public class Player
                 inventory.remove(item);
                 System.out.println("Dropped " + item);
             }
-            else 
+            else
             {
                 System.out.println("** " + item + " not in inventory **");
             }

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class TestMain 
+public class TestMain
 {
     public static void main(String[] args)
     {
@@ -8,6 +8,7 @@ public class TestMain
         int mainMenuChoice, actionChoice, returnResult;
         String playerName, item, itemType;
         Player Player1;
+        Item newItem;
 
         System.out.println("***** GAME TIME *****");
         System.out.println();
@@ -45,7 +46,7 @@ public class TestMain
             // Initialize this so the menu will print
             actionChoice = 4;
 
-            while (actionChoice != 5)
+            /*while (actionChoice != 5)
             {
                 System.out.printf("%nWhat would you like to do?%n");
                 System.out.println("1. Add item");
@@ -66,7 +67,7 @@ public class TestMain
                         System.out.printf("What item? ");
                         item = input.nextLine();
                         Player1.addItem(item);
-                        
+
                         System.out.printf("%nCurrent items:%n");
                         Player1.listItems();
                         break;
@@ -92,7 +93,16 @@ public class TestMain
                         break;
                 }
             }
-            
+			*/
+            System.out.println("A figure approaches\n...");
+            System.out.println("Quick! Take it! They can't know.");
+
+            newItem = new Item("dildo", 1, 1);
+            Player1.addItem(newItem);
+
+            System.out.printf("A stranger just gave you a %s!\n", newItem.getItemName());
+
+
         }
     }
 }
