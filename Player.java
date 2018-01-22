@@ -11,13 +11,13 @@ public class Player
     private int currentXP;
     private int currentLevel;
 
-    private ArrayList<String> inventory = new ArrayList<String>();
+    private ArrayList<Item> inventory = new ArrayList<Item>();
 
     public Player(String name)
     {
         this.name = name;
         currentHP = maxHP = 100;
-        inventory.add("fists");
+        //inventory.add("fists");
         currentXP = 0;
         currentLevel = 1;
     }
@@ -49,13 +49,13 @@ public class Player
 
     public void listItems()
     {
-        for (String item : inventory)
-            System.out.println("- " + item);
+        for (Item item : inventory)
+            System.out.println("- " + item.getItemName());
     }
 
-    public void addItem(String item)
+    public void addItem(Item item)
     {
-        item = item.toLowerCase();
+        //item = item.toLowerCase();
 
         inventory.add(item);
     }
