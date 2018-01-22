@@ -36,6 +36,11 @@ public class Item
 		return level;
 	}
 
+    public boolean getQuestState()
+    {
+        return questState;
+    }
+
 	public void setQuestState(boolean state)
 	{
 		questState = state;

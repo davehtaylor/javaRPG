@@ -2,21 +2,43 @@ import java.util.Scanner;
 
 public class TestMain
 {
+    public static void printMainMenu()
+    {
+        System.out.printf("***** GAME TIME *****%n%n");
+        System.out.printf("1. Play Game%n");
+        System.out.printf("2. Exit%n%n");
+        System.out.printf("*********************%n%n");
+    }
+
+
+    public static Player characterCreation(Player player)
+    {
+        // We can add more to this function as we
+        // figure out our attributes and skills system
+
+        Scanner input = new Scanner(System.in);
+        String name;
+
+        System.out.printf("Name: ");
+        name = input.nextLine();
+        
+        player = new Player(name);
+
+        return player;
+    }
+
+
     public static void main(String[] args)
     {
         Scanner input = new Scanner(System.in);
-        int mainMenuChoice, actionChoice, returnResult;
-        String playerName, item, itemType;
-        Player Player1;
-        Item newItem;
+        int mainMenuChoice;
+        Player Player1 = null;
+        Item newItem = null;
+        Item newItem2 = null;
 
-        System.out.println("***** GAME TIME *****");
-        System.out.println();
-        System.out.println("1. Play Game");
-        System.out.println("2. Exit");
-        System.out.println();
-        System.out.println("*********************");
-        System.out.println();
+        // Print main menu
+        printMainMenu();
+        
         System.out.printf("Your selection: ");
 
         mainMenuChoice = input.nextInt();
@@ -29,80 +51,25 @@ public class TestMain
         }
         else
         {
-            System.out.printf("What is your name: ");
-            playerName = input.nextLine();
-            Player1 = new Player(playerName);
+            System.out.printf("%n*** Create your character ***%n%n");
 
-            System.out.println();
+            // Create character
+            Player1 = characterCreation(Player1);
+            
+            // Adding items to test things out
+            newItem = new Item("Computer", 5, 100);
+            newItem2 = new Item("Flashlight", 1, 5);
+            Player1.addItem(newItem);
+            Player1.addItem(newItem2);
 
-            System.out.printf("Welcome, %s%n", Player1.getName());
+            System.out.printf("%nWelcome, %s%n", Player1.getName());
             System.out.printf("Current HP: %d/%d%n",
                     Player1.getCurrentHP(), Player1.getMaxHP());
             System.out.printf("Current XP: %d%n", Player1.getCurrentXP());
             System.out.printf("Current level: %d%n", Player1.getCurrentLevel());
-
-            System.out.println();
-
-            // Initialize this so the menu will print
-            actionChoice = 4;
-
-            /*while (actionChoice != 5)
-            {
-                System.out.printf("%nWhat would you like to do?%n");
-                System.out.println("1. Add item");
-                System.out.println("2. Drop item");
-                System.out.println("3. List items");
-                System.out.println("4. Print menu");
-                System.out.println("5. Quit");
-
-                System.out.println();
-                System.out.printf("Your selection: ");
-
-                actionChoice = input.nextInt();
-                input.nextLine();
-
-                switch (actionChoice)
-                {
-                    case 1:
-                        System.out.printf("What item? ");
-                        item = input.nextLine();
-                        Player1.addItem(item);
-
-                        System.out.printf("%nCurrent items:%n");
-                        Player1.listItems();
-                        break;
-                    case 2:
-                        System.out.printf("What item? ");
-                        item = input.nextLine();
-                        Player1.dropItem(item);
-
-                        System.out.printf("%nCurrent items:%n");
-                        Player1.listItems();
-                        break;
-                    case 3:
-                        System.out.printf("%nItems:%n");
-                        Player1.listItems();
-                        break;
-                    case 4:
-                        continue;
-                    case 5:
-                        System.out.println("Goodbye");
-                        break;
-                    default:
-                        System.out.println("Invalid choice");
-                        break;
-                }
-            }
-			*/
-            System.out.println("A figure approaches\n...");
-            System.out.println("Quick! Take it! They can't know.");
-
-            newItem = new Item("dildo", 1, 1);
-            Player1.addItem(newItem);
-
-            System.out.printf("A stranger just gave you a %s!\n", newItem.getItemName());
-
-
+            System.out.println("Current items:");
+            Player1.listItems();
+            
         }
     }
 }
