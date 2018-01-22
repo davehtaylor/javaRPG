@@ -2,11 +2,12 @@
 
 import java.util.ArrayList;
 
+// hi Dave!
 public class Player
 {
     private String name;
-    private int currentHP; 
-    private int maxHP; 
+    private int currentHP;
+    private int maxHP;
     private int currentXP;
     private int currentLevel;
 
@@ -25,7 +26,7 @@ public class Player
     {
         return name;
     }
-    
+
     public int getCurrentHP()
     {
         return currentHP;
@@ -61,7 +62,7 @@ public class Player
 
     public void dropItem(String item)
     {
-        item = item.toLowerCase(); 
+        item = item.toLowerCase();
 
         // Make sure the user actually entered something
         if (item.isEmpty())
@@ -81,7 +82,7 @@ public class Player
                 inventory.remove(item);
                 System.out.println("Dropped " + item);
             }
-            else 
+            else
             {
                 System.out.println("** " + item + " not in inventory **");
             }
