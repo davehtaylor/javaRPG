@@ -7,12 +7,12 @@ public class Dice
     // Pass in the number of dice to roll, and which dice to roll
     // e.g. 2d6 with an instance variable named "dice", it
     // would be dice.roll(2, "d6")
-    public int roll(int numOfDie, String nameOfDie)
+    public int roll(int numOfDice, String nameOfDie)
     {
         int sumOfDice = 0, i;
         SecureRandom randomNumbers = new SecureRandom();
 
-        for (i = 0; i < numOfDie; i++)
+        for (i = 0; i < numOfDice; i++)
         {
             if (nameOfDie.equals("d4"))
                 sumOfDice += (1 + randomNumbers.nextInt(4));
