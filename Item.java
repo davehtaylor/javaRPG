@@ -6,6 +6,7 @@ public class Item
 	private int weight;
 	private int value;
 	private boolean questState;
+    
 
 	public Item(String name, int weight, int value)
 	{
@@ -16,30 +17,36 @@ public class Item
 		this.questState = false;
 	}
 
+
 	public String getItemName()
 	{
 		return name;
 	}
+
 
 	public int getWeight()
 	{
 		return weight;
 	}
 
+
 	public int getValue()
 	{
 		return value;
 	}
 
+
 	public int getLevel()
 	{
 		return level;
 	}
+    
 
     public boolean getQuestState()
     {
         return questState;
     }
+
 
 	public void setQuestState(boolean state)
 	{
