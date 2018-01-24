@@ -15,7 +15,7 @@ public class Player
     public Player(String name)
     {
         this.name = name;
-        this.currentHP = maxHP = 100;
+        this.currentHP = this.maxHP = 100;
         this.currentXP = 0;
         this.currentLevel = 1;
     }
