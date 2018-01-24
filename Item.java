@@ -1,19 +1,21 @@
 
 public class Item
 {
-	private String name;
-	private int level;
-	private int weight;
-	private int value;
+	private String  name;
+	private String  description;
+	private int     level;
+	private int     weight;
+	private int     value;
 	private boolean questState;
 
 	public Item(String name, int weight, int value)
 	{
-		this.name = name;
-		this.weight = weight;
-		this.value = value;
-		this.level = 1;
-		this.questState = false;
+		this.name        = name;
+		this.description = description;
+		this.weight      = weight;
+		this.value       = value;
+		this.level       = 1;
+		this.questState  = false;
 	}
 
 	public String getItemName()
