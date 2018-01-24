@@ -48,6 +48,8 @@ public class TestMain
         Player Player1 = null;
         Item newItem = null;
         Item newItem2 = null;
+        Area playArea = null;
+        double[] start = {0,0};
 
         // Print main menu
         printMainMenu();
@@ -68,5 +70,11 @@ public class TestMain
         System.out.printf("Current level: %d%n", Player1.getCurrentLevel());
         System.out.println("Current items:");
         Player1.listItems();
+
+        playArea = new Area("Open Field", 100 , 100 , start , false, true);
+        
+
+
+        
     }
 }
