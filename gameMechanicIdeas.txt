@@ -1,0 +1,27 @@
+What sort of things will we do in the game?
+-------------------------------------------
+
+Player actions (non-combat):
+    - Walk
+    - Talk to humans
+    - Talk to AI
+    - Pick up items
+    - Open containers
+    - Remove items from containers
+    - Drop items
+    - Chat in terminals
+    - Hack terminals
+    - Read paper
+    - Read digital files
+    - Rewire electronics
+    - Sabotage electronics
+    - Sabotage mechanical systems
+
+
+NPC actions:
+
+
+Combat:
+
+
+
