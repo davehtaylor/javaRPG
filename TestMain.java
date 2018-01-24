@@ -12,7 +12,7 @@ public class TestMain
         System.out.printf("2. Exit%n%n");
         System.out.printf("*********************%n%n");
 
-        System.out.printf("Your selection: ");
+        System.out.printf("> ");	//changed to a symbol rather than text prompt.
 
         mainMenuChoice = input.nextInt();
         input.nextLine();
@@ -27,7 +27,7 @@ public class TestMain
     public static Player characterCreation(Player player)
     {
         // We can add more to this function as we
-        // figure out our attributes and skills system
+        // figure out our attributes and skills systemcd S
 
         Scanner input = new Scanner(System.in);
         String name;
@@ -36,7 +36,7 @@ public class TestMain
 
         System.out.printf("Name: ");
         name = input.nextLine();
-        
+
         player = new Player(name);
 
         return player;
@@ -54,7 +54,7 @@ public class TestMain
 
         // Create character
         Player1 = characterCreation(Player1);
-        
+
         // Adding items to test things out
         newItem = new Item("Computer", 5, 100);
         newItem2 = new Item("Flashlight", 1, 5);
