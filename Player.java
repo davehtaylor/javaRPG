@@ -4,21 +4,20 @@ import java.util.ArrayList;
 
 public class Player
 {
-    private String name;
-    private int currentHP;
-    private int maxHP;
-    private int currentXP;
-    private int currentLevel;
-    private int i;
+    private String  name;
+    private int     currentHP;
+    private int     maxHP;
+    private int     currentXP;
+    private int     currentLevel;
 
     private ArrayList<Item> inventory = new ArrayList<Item>();
 
     public Player(String name)
     {
         this.name = name;
-        currentHP = maxHP = 100;
-        currentXP = 0;
-        currentLevel = 1;
+        this.currentHP = maxHP = 100;
+        this.currentXP = 0;
+        this.currentLevel = 1;
     }
 
     public String getName()
@@ -48,7 +47,7 @@ public class Player
 
     public void listItems()
     {
-        i = 1;
+        int i = 1;
 
         for (Item item : inventory)
         {
