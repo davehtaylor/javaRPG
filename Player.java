@@ -4,14 +4,38 @@ import java.util.ArrayList;
 
 public class Player
 {
+    // Basic player info
     private String  name;
     private int     currentHP;
     private int     maxHP;
     private int     currentXP;
     private int     currentLevel;
+    
+    // Attributes
+    private int     strength;
+    private int     dexterity;
+    private int     constitution;
+    private int     intelligence;
+    private int     wisdom;
+    private int     charisma;
 
+    // Skills
+    private int     acrobatics;
+    private int     athletics;
+    private int     computerScience;
+    private int     electronics;
+    private int     insight;
+    private int     intimidation;
+    private int     investigation;
+    private int     perception;
+    private int     persuasion;
+    private int     stealth;
+    private int     survival;
+
+    // Inventory
     private ArrayList<Item> inventory = new ArrayList<Item>();
 
+    // Constructor
     public Player(String name)
     {
         this.name = name;

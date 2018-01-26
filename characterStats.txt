@@ -106,11 +106,90 @@ signs that owlbears live nearby, predict the weather, or avoid quicksand and oth
 **************************************
 **************************************
 
-Attributes/skills we might want to use
+Attributes/skills we might want to use, and how they can apply to this game
+
 
 Attributes
 ----------------------
+I think sticking with the same attributes makes sense. 
+
+- Strength
+Physical strength
+
+- Dexterity
+Agility. Controls attack movement, speed, and accuracy, as well as dodging
+attacks
+
+- Constitution
+Influences HP, fatigue, environmental resistances
+
+- Intelligence
+Problem solving ability, comprehension of spoken languages, computer
+programming languages, data structures, algorithms, computer systems, 
+understand technical documents, etc. Controls how many skill points 
+received at level-up.
+
+- Wisdom
+Controls a character's ability to cast certain spells, communicate to 
+mystical entities, or discern other characters' motives or feelings
+
+- Charisma
+A measure of a character's social skills, and sometimes their physical
+appearance. Generally influences prices while trading and NPC reactions.
+
 
 
 Skills
 ----------------------
+
+- Acrobatics (dex)
+Covers your attempt to stay on your feet in a tricky situation, such as when 
+you're trying to run across a sheet of ice, balance on a tightrope, or stay 
+upright on a rocking ship's deck. Also covers performing acrobatic stunts, 
+including dives, rolls, somersaults, and flips
+
+- Athletics (str)
+Covers difficult situations you encounter while climbing, jumping, or swimming
+
+- Computer Science (int)
+Hacking terminals, writing programs, recalling computing history,
+understanding algorithms, etc.
+
+- Electronics (int)
+Modifying or sabotaging security systems, constructing devices, understanding
+schematics
+
+- Insight (wis)
+Decides whether you can determine the true intentions of a creature, such as when 
+searching out a lie or predicting someone's next move. Doing so involves gleaning 
+clues from body language, speech habits, and changes in mannerisms.
+
+- Intimidation (cha)
+When you attempt to influence someone through overt threats, hostile actions, 
+and physical violence
+
+- Investigation (int)
+When you look around for clues and make deductions based on those clues. 
+You might deduce the location of a hidden object, discern from the appearance of 
+a wound what kind of weapon dealt it, or determine the weakest point in a tunnel 
+that could cause it to collapse. Poring through paper or digital files in search of a 
+hidden fragment of knowledge might also call for an Intelligence (Investigation) check.
+
+- Perception (wis)
+Lets you spot, hear, or otherwise detect the presence of something. It measures your 
+general awareness of your surroundings and the keenness of your senses
+
+- Persuasion (cha)
+When you attempt to influence someone or a group of people with tact, social graces, 
+or good nature
+
+- Stealth (dex)
+When you attempt to conceal yourself from enemies, slink past guards, slip away 
+without being noticed, or sneak up on someone without being seen or heard. 
+Also whenever you attempt an act of legerdemain or manual trickery, such as planting 
+something on someone else or concealing an object on your person
+
+- Survival (wis)
+Governs medical treatments of player or NPCs, how effectively
+food, drink, or health boosts heal the player, understanding terrain,
+navigating hazards.
