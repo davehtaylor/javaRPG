@@ -1,0 +1,38 @@
+What sort of things will we do in the game?
+-------------------------------------------
+
+Player actions (non-combat):
+    - Walk
+    - Talk to humans
+    - Talk to AI
+    - Pick up items
+    - Open containers
+    - Remove items from containers
+    - Drop items
+    - Chat in terminals
+    - Hack terminals
+    - Upload files
+    - Download files
+    - Read paper
+    - Read digital files
+    - Rewire electronics
+    - Sabotage electronics
+    - Sabotage mechanical systems
+
+
+NPC actions (non-combat):
+
+
+Combat:
+
+    Turn-based system. We could use the player level, dice rolls, skill checks, 
+    and critical percentages. We could also take into account the 
+    opponent's protection (armor, clothing, etc.) as well as the 
+    opponent's level, so that the damage done to the opponent is the
+    difference between these calculations. For example, if the player's
+    numbers add up to 12, and the opponent's add up to 10, the damage done
+    will be 2. But if the player's number is 8, and the opponent 10, then no
+    damage will be done. 
+
+    As we figure out what the attributes and skills will look like for our
+    player, we can refine this a bit more.   
