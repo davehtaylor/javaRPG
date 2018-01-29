@@ -48,6 +48,8 @@ public class TestMain
         Player Player1 = null;
         Item newItem = null;
         Item newItem2 = null;
+        Area playArea = null;
+        double[] start = {0,0};
 
         // Print main menu
         printMainMenu();
@@ -72,6 +74,8 @@ public class TestMain
                Player1.getPlayerInfo(PlayerInfo.CURRENTLEVEL));
         Player1.listItems();
 
+        playArea = new Area("Open Field", 100 , 100 , start , false, true);
+        
         // Testing the getter and setters
         // First return the strength
         System.out.printf("Player strength: %d%n",
@@ -85,6 +89,6 @@ public class TestMain
         System.out.println("Decrementing player strength by 2");
         Player1.incDecPlayerInfo(PlayerInfo.STRENGTH, (-2));
         System.out.printf("Player strength: %d%n",
-               Player1.getPlayerInfo(PlayerInfo.STRENGTH)); 
+               Player1.getPlayerInfo(PlayerInfo.STRENGTH));
     }
 }
