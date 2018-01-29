@@ -63,18 +63,32 @@ public class TestMain
         Player1.addItem(newItem);
         Player1.addItem(newItem2);
 
-        System.out.printf("%nWelcome, %s%n", Player1.getName());
+        System.out.printf("%nWelcome, %s%n", 
+               Player1.getPlayerInfo(PlayerInfo.NAME));
         System.out.printf("Current HP: %d/%d%n",
-                Player1.getCurrentHP(), Player1.getMaxHP());
-        System.out.printf("Current XP: %d%n", Player1.getCurrentXP());
-        System.out.printf("Current level: %d%n", Player1.getCurrentLevel());
-        System.out.println("Current items:");
+               Player1.getPlayerInfo(PlayerInfo.CURRENTHP), 
+               Player1.getPlayerInfo(PlayerInfo.MAXHP));
+        System.out.printf("Current XP: %d%n", 
+               Player1.getPlayerInfo(PlayerInfo.CURRENTXP));
+        System.out.printf("Current level: %d%n", 
+               Player1.getPlayerInfo(PlayerInfo.CURRENTLEVEL));
         Player1.listItems();
 
         playArea = new Area("Open Field", 100 , 100 , start , false, true);
         
-
-
-        
+        // Testing the getter and setters
+        // First return the strength
+        System.out.printf("Player strength: %d%n",
+               Player1.getPlayerInfo(PlayerInfo.STRENGTH)); 
+        // Increment it
+        System.out.println("Incrementing player strength by 2");
+        Player1.incDecPlayerInfo(PlayerInfo.STRENGTH, 2);
+        System.out.printf("Player strength: %d%n",
+               Player1.getPlayerInfo(PlayerInfo.STRENGTH)); 
+        // Then decrement it
+        System.out.println("Decrementing player strength by 2");
+        Player1.incDecPlayerInfo(PlayerInfo.STRENGTH, (-2));
+        System.out.printf("Player strength: %d%n",
+               Player1.getPlayerInfo(PlayerInfo.STRENGTH));
     }
 }
