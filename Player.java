@@ -12,6 +12,7 @@ public class Player
     private int         currentLevel;
     private int         currentCarryWeight;
     private int         maxCarryWeight;
+    private Employer    employer;
     
     // Attributes
     private int         charisma;
