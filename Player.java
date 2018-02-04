@@ -118,6 +118,9 @@ public class Player
             case MAXCARRYWEIGHT:
                 returnValue = this.maxCarryWeight;
                 break;
+            case EMPLOYER:
+                returnValue = this.employer;
+                break;
 
             // Return attribute value
             case CHARISMA:
@@ -211,6 +214,10 @@ public class Player
                 break;
             case MAXCARRYWEIGHT:
                 this.maxCarryWeight += value;
+                break;
+            case EMPLOYER:
+                // If they pass in the employer, do nothing, since
+                // employer can't be incremented or decremented
                 break;
 
             // Change attribute value
