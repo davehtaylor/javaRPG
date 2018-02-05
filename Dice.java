@@ -7,7 +7,7 @@ public class Dice
     // Pass in the number of dice to roll, and which dice to roll
     // e.g. 2d6 with an instance variable named "dice", it
     // would be dice.roll(2, "d6")
-    public int roll(int numOfDice, String nameOfDie)
+    public static int roll(int numOfDice, String nameOfDie)
     {
         int sumOfDice = 0, i;
         SecureRandom randomNumbers = new SecureRandom();
