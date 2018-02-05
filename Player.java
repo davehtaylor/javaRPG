@@ -12,7 +12,7 @@ public class Player
     private int         currentLevel;
     private int         currentCarryWeight;
     private int         maxCarryWeight;
-    private Employer    employer;
+    private Employers   employer;
     
     // Attributes
     private int         charisma;
@@ -62,6 +62,7 @@ public class Player
         this.currentXP = 0;
         this.currentLevel = 1;
         this.currentCarryWeight = 1;
+        this.employer = Employers.NONE;
         
         // Set the attributes to a baseline of 5
         this.charisma = 5;
@@ -119,8 +120,7 @@ public class Player
                 returnValue = this.maxCarryWeight;
                 break;
             case EMPLOYER:
-                returnValue = this.employer;
-                break;
+                return this.employer;
 
             // Return attribute value
             case CHARISMA:
@@ -182,6 +182,15 @@ public class Player
         }
 
         return returnValue;
+    }
+
+
+    // Set the player employer. We may end up having other player info
+    // fields that need to be set, rather than incremented. And if so,
+    // we'll overload this function
+    public void setPlayerInfo(Employers employer)
+    {
+        this.employer = employer;
     }
 
 

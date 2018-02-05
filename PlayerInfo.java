@@ -11,7 +11,7 @@ public enum PlayerInfo
     CURRENTLEVEL,
     CURRENTCARRYWEIGHT,
     MAXCARRYWEIGHT,
-    EMPLOYER;
+    EMPLOYER,
 
     // Attributes
     CHARISMA,
