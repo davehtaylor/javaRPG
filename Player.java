@@ -1,6 +1,7 @@
 // Class for a player character
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Player
 {
@@ -36,12 +37,9 @@ public class Player
     private int         survival;
 
     // Inventory
-    //
-    // I think we'll need separate arrays for different
-    // types of times. e.g. one for weapons, one for apparel, one
-    // for misc items, etc. But each item type should be a child object
-    // of the item class
-    private ArrayList<Item> inventory = new ArrayList<Item>();
+    // We can use the common superclass Item as the list type, and
+    // then add each item subclass object to the list.
+    private List<Item> inventory = new ArrayList<Item>();
 
 
     // Constructor
@@ -290,17 +288,87 @@ public class Player
     }
 
 
-    public void listItems()
+    // We'll print out the inventory items based on their class type. 
+    // We'll do this by getting a value from an enum from the caller,
+    // then check each object in the list to see if it's an instance of 
+    // that class.
+    //
+    // Right now, this feels a bit brute-force-y. Will alter as I learn more.
+    public void listItems(ItemType itemType)
     {
         int i = 1;
 
-        for (Item item : inventory)
+        switch (itemType)
         {
-            System.out.printf("%d. %s%n", i, item.getItemName());
-            System.out.printf(" - Weight: %d kilograms%n", item.getWeight());
-            System.out.printf(" - Value: %d credits%n", item.getValue());
-            System.out.printf(" - Quest item? %b%n", item.getQuestState());
-            i++;
+            case WEAPON:
+                System.out.println("** Weapons **");
+                
+                for (Item item : this.inventory)
+                {
+                    if (item instanceof Weapon)
+                    {
+                        System.out.printf("%d. %s%n", i, item.getItemName());
+                        System.out.printf(" - Weight: %d kilograms%n", item.getWeight());
+                        System.out.printf(" - Value: %d credits%n", item.getValue());
+                        System.out.printf(" - Damage: %d%n", ((Weapon)item).getDamage());
+                        System.out.printf(" - Quest item? %b%n", item.getQuestState());
+                        i++;
+                    }
+                }
+                break;
+
+            case APPAREL:
+                System.out.println("** Apparel **");
+
+                for (Item item : this.inventory)
+                {
+                    if (item instanceof Apparel)
+                    {
+                        System.out.printf("%d. %s%n", i, item.getItemName());
+                        System.out.printf(" - Weight: %d kilograms%n", item.getWeight());
+                        System.out.printf(" - Value: %d credits%n", item.getValue());
+                        System.out.printf(" - Defense: %d%n", ((Apparel)item).getDefense());
+                        System.out.printf(" - Quest item? %b%n", item.getQuestState());
+                        i++;
+                    }
+                }
+                break;
+
+            case AIDITEM:
+                System.out.println("** Aid Items **");
+
+                for (Item item : this.inventory)
+                {
+                    if (item instanceof Apparel)
+                    {
+                        System.out.printf("%d. %s%n", i, item.getItemName());
+                        System.out.printf(" - Weight: %d kilograms%n", item.getWeight());
+                        System.out.printf(" - Value: %d credits%n", item.getValue());
+                        System.out.printf(" - HP +%d%n", ((AidItem)item).getAidValue());
+                        System.out.printf(" - Quest item? %b%n", item.getQuestState());
+                        i++;
+                    }
+                }
+                break;
+
+            case MISCITEM:
+                System.out.println("** Misc Items **");
+
+                for (Item item : this.inventory)
+                {
+                    if (item instanceof MiscItem)
+                    {
+                        System.out.printf("%d. %s%n", i, item.getItemName());
+                        System.out.printf(" - Weight: %d kilograms%n", item.getWeight());
+                        System.out.printf(" - Value: %d credits%n", item.getValue());
+                        System.out.printf(" - Quest item? %b%n", item.getQuestState());
+                        i++;
+                    }
+                }
+                break;
+
+            default:
+                return;
         }
     }
 
