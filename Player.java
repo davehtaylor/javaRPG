@@ -407,7 +407,7 @@ public class Player
 
         this.currentCarryWeight -= item.getWeight();
 
-        if (overencumbered == true)
+        if (this.overencumbered == true)
             if (currentCarryWeight <= maxCarryWeight)
                 this.overencumbered = false;
     }
