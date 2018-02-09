@@ -387,11 +387,11 @@ public class Player
     // Still need to do some input validation
     public void addItem(Item item)
     {
-        inventory.add(item);
+        this.inventory.add(item);
 
         this.currentCarryWeight += item.getWeight();
 
-        if (currentCarryWeight > maxCarryWeight)
+        if (this.currentCarryWeight > this.maxCarryWeight)
             this.overencumbered = true;
     }
 
@@ -403,12 +403,12 @@ public class Player
     // Still need to do some input validation
     public void dropItem(Item item)
     {
-        inventory.remove(item);
+        this.inventory.remove(item);
 
         this.currentCarryWeight -= item.getWeight();
 
         if (this.overencumbered == true)
-            if (currentCarryWeight <= maxCarryWeight)
+            if (this.currentCarryWeight <= this.maxCarryWeight)
                 this.overencumbered = false;
     }
 }
