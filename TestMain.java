@@ -58,8 +58,8 @@ public class TestMain
         Player1 = characterCreation(Player1);
 
         // Adding items to test things out
-        newItem = new Item("Computer", 5, 100);
-        newItem2 = new Item("Flashlight", 1, 5);
+        newItem = new Weapon("Pistol", 5, 100, 10);
+        newItem2 = new Apparel("Jacket", 5, 5, 20);
         Player1.addItem(newItem);
         Player1.addItem(newItem2);
 
@@ -72,7 +72,17 @@ public class TestMain
                Player1.getPlayerInfo(PlayerInfo.CURRENTXP));
         System.out.printf("Current level: %d%n", 
                Player1.getPlayerInfo(PlayerInfo.CURRENTLEVEL));
-        Player1.listItems();
+        System.out.printf("Current carry weight: %d%n",
+               Player1.getPlayerInfo(PlayerInfo.CURRENTCARRYWEIGHT));
+//        Player1.listItems();
+        Player1.listItems(ItemType.WEAPON);
+        Player1.listItems(ItemType.APPAREL);
+
+        System.out.printf("%nDropping %s%n", newItem2.getItemName());
+        Player1.dropItem(newItem2);
+        Player1.listItems(ItemType.APPAREL);
+        System.out.printf("Current carry weight: %d%n",
+               Player1.getPlayerInfo(PlayerInfo.CURRENTCARRYWEIGHT));
 
         playArea = new Area("Open Field", 100 , 100 , start , false, true);
         

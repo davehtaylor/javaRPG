@@ -13,6 +13,7 @@ public class Player
     private int         currentLevel;
     private int         currentCarryWeight;
     private int         maxCarryWeight;
+    private boolean     overencumbered;
     private Employers   employer;
     
     // Attributes
@@ -117,6 +118,8 @@ public class Player
             case MAXCARRYWEIGHT:
                 returnValue = this.maxCarryWeight;
                 break;
+            case OVERENCUMBERED:
+                return this.overencumbered;
             case EMPLOYER:
                 return this.employer;
 
@@ -221,6 +224,10 @@ public class Player
                 break;
             case MAXCARRYWEIGHT:
                 this.maxCarryWeight += value;
+                break;
+            case OVERENCUMBERED:
+                // If they pass in the overencumbered, do nothing, since
+                // boolean can't be incremented or decremented
                 break;
             case EMPLOYER:
                 // If they pass in the employer, do nothing, since
@@ -373,14 +380,35 @@ public class Player
     }
 
 
+    // Add the item to the inventory, and update the player's carry weight.
+    // If the weight exceeds the max, we'll flag that the player is
+    // overencumbered. 
+    //
+    // Still need to do some input validation
     public void addItem(Item item)
     {
         inventory.add(item);
+
+        this.currentCarryWeight += item.getWeight();
+
+        if (currentCarryWeight > maxCarryWeight)
+            this.overencumbered = true;
     }
 
 
+    // Drop an item. We'll update the player's carry weight.
+    // If the player is overencumbered, we want to see if dropping
+    // the item changes that.
+    //
+    // Still need to do some input validation
     public void dropItem(Item item)
     {
         inventory.remove(item);
+
+        this.currentCarryWeight -= item.getWeight();
+
+        if (overencumbered == true)
+            if (currentCarryWeight <= maxCarryWeight)
+                this.overencumbered = false;
     }
 }

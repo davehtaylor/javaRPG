@@ -11,6 +11,7 @@ public enum PlayerInfo
     CURRENTLEVEL,
     CURRENTCARRYWEIGHT,
     MAXCARRYWEIGHT,
+    OVERENCUMBERED,
     EMPLOYER,
 
     // Attributes
