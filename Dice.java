@@ -5,8 +5,7 @@ import java.security.SecureRandom;
 public class Dice
 {
     // Pass in the number of dice to roll, and which dice to roll
-    // e.g. 2d6 with an instance variable named "dice", it
-    // would be dice.roll(2, "d6")
+    // e.g. 2d6, it would be Dice.roll(2, "d6")
     public static int roll(int numOfDice, String nameOfDie)
     {
         int sumOfDice = 0, i;
